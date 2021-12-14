@@ -3,7 +3,28 @@
     <div id="nav">
       <router-link to="/">Home</router-link>
       |
-      <router-link to="/about">About</router-link>
+      <router-link to="/CardsEdit">CardsEdit</router-link>
+      |
+      <router-link to="/CardsIndex">CardsIndex</router-link>
+      |
+      <router-link to="/CardsNew">CardsNew</router-link>
+      |
+      <router-link to="/CardsShow">CardsShow</router-link>
+      |
+      <router-link to="/CoursesEdit">CoursesEdit</router-link>
+      |
+      <router-link to="/CoursesIndex">CoursesIndex</router-link>
+      |
+      <router-link to="/CoursesNew">CoursesNew</router-link>
+      |
+      <router-link to="/CoursesShow">CoursesShow</router-link>
+      |
+      <router-link to="/Login">Login</router-link>
+      |
+      <router-link to="/Signup">Signup</router-link>
+      |
+      <router-link to="/UserHome">UserHome</router-link>
+      |
     </div>
     <router-view />
   </div>

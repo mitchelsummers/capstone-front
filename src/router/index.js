@@ -10,6 +10,7 @@ import CoursesNew from "../views/CoursesNew.vue";
 import CoursesShow from "../views/CoursesShow.vue";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
+import Logout from "../views/Logout.vue";
 import Signup from "../views/Signup.vue";
 import UserHome from "../views/UserHome.vue";
 
@@ -34,6 +35,7 @@ const routes = [
   { path: "/CoursesShow", name: "CoursesShow", component: CoursesShow },
   { path: "/", name: "Home", component: Home },
   { path: "/Login", name: "Login", component: Login },
+  { path: "/Logout", name: "Logout", component: Logout },
   { path: "/Signup", name: "Signup", component: Signup },
   { path: "/UserHome", name: "UserHome", component: UserHome },
 ];

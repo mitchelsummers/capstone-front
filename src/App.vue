@@ -21,6 +21,8 @@
       |
       <router-link to="/Login">Login</router-link>
       |
+      <router-link to="/Logout">Logout</router-link>
+      |
       <router-link to="/Signup">Signup</router-link>
       |
       <router-link to="/UserHome">UserHome</router-link>
@@ -52,3 +54,22 @@
   color: #42b983;
 }
 </style>
+
+<script>
+export default {
+  data: function () {
+    return {
+      flashMessage: "",
+    };
+  },
+  methods: {
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
+};
+</script>

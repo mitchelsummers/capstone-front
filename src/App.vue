@@ -3,13 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link>
       |
-      <router-link to="/CardsEdit">CardsEdit</router-link>
-      |
-      <router-link to="/CardsIndex">CardsIndex</router-link>
-      |
-      <router-link to="/CardsNew">CardsNew</router-link>
-      |
-      <router-link to="/CardsShow">CardsShow</router-link>
+      <router-link to="/CardsNew">New Card</router-link>
       |
       <router-link to="/courses">Courses</router-link>
       |
@@ -19,8 +13,7 @@
       |
       <router-link to="/signup">Signup</router-link>
       |
-      <router-link to="/UserHome">UserHome</router-link>
-      |
+      <router-link to="/user">User Home</router-link>
     </div>
     <router-view />
   </div>

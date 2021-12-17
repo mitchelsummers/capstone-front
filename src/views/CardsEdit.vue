@@ -33,6 +33,7 @@
     </form>
     <button v-on:click="destroyCard()">Delete</button>
     <div><router-link to="/user">Back to User Home</router-link></div>
+    <!-- <p>{{ card.players }}</p> -->
   </div>
 </template>
 

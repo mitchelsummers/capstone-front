@@ -49,7 +49,7 @@ export default {
     createCard: function () {
       console.log("Create new Card");
       axios
-        .post("/Cards", this.newCardParams)
+        .post("/cards", this.newCardParams)
         .then(() => {
           this.$parent.flashMessage = "Successfully Created";
           this.$router.push("/user");

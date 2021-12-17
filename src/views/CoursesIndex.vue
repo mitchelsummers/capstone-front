@@ -1,17 +1,19 @@
 <template>
   <div class="course-index">
-    <h3>Courses</h3>
-    <router-link v-bind:to="`/newcourse`">New Course</router-link>
+    <h1>Courses</h1>
     <div v-for="course in courses" :key="course.id">
+      <router-link v-bind:to="`/courses/${course.id}`">
+        <h2>{{ course.name }}</h2>
+      </router-link>
       <router-link v-bind:to="`/courses/${course.id}`">
         <img :src="course.image" :alt="course.title" />
       </router-link>
-      <h4>{{ course.name }}</h4>
       <p>{{ course.address }}</p>
       <p>RATING: {{ course.rating }}</p>
       <!-- <button v-on:click="showCourse(course)">More Info</button> -->
       <div>---------------------------------------------------------------------------</div>
     </div>
+    <router-link v-bind:to="`/newcourse`">New Course</router-link>
   </div>
 </template>
 

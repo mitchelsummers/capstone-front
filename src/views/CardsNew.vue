@@ -1,37 +1,59 @@
 <template>
   <div class="cards-new">
-    <h1 v-if="status" class="text-danger">{{ status }}</h1>
-    <form v-on:submit.prevent="createCard()">
-      <h1>New Card</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Name:</label>
-        <input type="text" v-model="newCardParams.name" />
+    <section id="services" class="section-bg">
+      <div class="container" data-aos="fade-up">
+        <header class="section-header">
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+        </header>
+
+        <div class="row justify-content-center">
+          <div class="col-md-5 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="box">
+              <h4 class="title"><a href="">NEW CARD</a></h4>
+              <h1 v-if="status" class="text-danger">{{ status }}</h1>
+              <form v-on:submit.prevent="createCard()">
+                <ul>
+                  <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+                </ul>
+                <div>
+                  <label>Name:</label>
+                  <input type="text" v-model="newCardParams.name" />
+                </div>
+                <div>
+                  <label>Month:</label>
+                  <input type="text" v-model="newCardParams.month" />
+                </div>
+                <div>
+                  <label>Day:</label>
+                  <input type="text" v-model="newCardParams.day" />
+                </div>
+                <div>
+                  <label>Time:</label>
+                  <input type="text" v-model="newCardParams.time" />
+                </div>
+                <div>
+                  <label>Privacy:</label>
+                  <input type="text" v-model="newCardParams.privacy" />
+                </div>
+                <div>
+                  <label>Course:</label>
+                  <input type="text" v-model="newCardParams.course_id" />
+                </div>
+                <!-- <select v-model="course">
+        <option v-for="course in courses" v-bind:key="course.id" v-bind:value="course.id">
+          {{ course.name }}
+        </option>
+      </select>
+      <span>Course: {{ course }}</span> -->
+                <input type="submit" value="Submit" />
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <label>Month:</label>
-        <input type="text" v-model="newCardParams.month" />
-      </div>
-      <div>
-        <label>Day:</label>
-        <input type="text" v-model="newCardParams.day" />
-      </div>
-      <div>
-        <label>Time:</label>
-        <input type="text" v-model="newCardParams.time" />
-      </div>
-      <div>
-        <label>Privacy:</label>
-        <input type="text" v-model="newCardParams.privacy" />
-      </div>
-      <div>
-        <label>Course:</label>
-        <input type="text" v-model="newCardParams.course_id" />
-      </div>
-      <input type="submit" value="Submit" />
-    </form>
+    </section>
   </div>
 </template>
 
@@ -43,6 +65,8 @@ export default {
       newCardParams: {},
       errors: [],
       status: "",
+      courses: [],
+      course: [],
     };
   },
   methods: {
@@ -58,6 +82,11 @@ export default {
           this.status = error.response.status;
           console.log(error.response);
         });
+    },
+    indexCourses: function () {
+      axios.get("/courses").then((response) => {
+        this.courses = response.data;
+      });
     },
   },
 };

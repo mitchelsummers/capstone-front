@@ -1,21 +1,40 @@
 <template>
   <div class="card-show">
-    <h2>{{ card.name }}</h2>
-    <router-link v-bind:to="`/courses/${card.course.id}`">
-      <p>{{ card.course.name }}</p>
-    </router-link>
-    <h3>{{ card.month }} {{ card.day }}, {{ card.time }}</h3>
-    <!-- <p>{{ card.players }}</p> -->
-    <div v-for="user in card.users" v-bind:key="user.id">
-      <p>{{ user.user_name }}</p>
-    </div>
-    <!-- <p>{{ card.users }}</p> -->
-    <!-- <p>{{ card.users[0].user_name }}</p>
+    <section id="services" class="section-bg">
+      <div class="container" data-aos="fade-up">
+        <header class="section-header">
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+        </header>
+
+        <div class="row justify-content-center">
+          <div class="col-md-5 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="box">
+              <h4 class="title">{{ card.name }}</h4>
+              <router-link v-bind:to="`/courses/${card.course.id}`">
+                <p class="description">{{ card.course.name }}</p>
+              </router-link>
+              <p class="description">{{ card.month }} {{ card.day }}, {{ card.time }}</p>
+              <!-- <p>{{ card.players }}</p> -->
+              <p class="description"><strong>Players:</strong></p>
+              <p class="description"></p>
+              <div v-for="user in card.users" v-bind:key="user.id">
+                <p class="description">{{ user.user_name }}</p>
+              </div>
+              <p class="description">----------------</p>
+              <!-- <p>{{ card.users }}</p> -->
+              <!-- <p>{{ card.users[0].user_name }}</p>
     <p>{{ card.users[1].user_name }}</p> -->
-    <router-link to="/user">Back to User Home</router-link>
-    |
-    <router-link v-bind:to="`/cards/${card.id}/edit`">Edit card</router-link>
-    <button v-on:click="addPlayer()">Join</button>
+              <router-link to="/user"><p class="description">Home</p></router-link>
+
+              <router-link v-bind:to="`/cards/${card.id}/edit`"><p class="description">Edit card</p></router-link>
+              <button v-on:click="addPlayer()"><p class="description">Join</p></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 

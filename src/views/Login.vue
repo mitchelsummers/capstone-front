@@ -1,20 +1,38 @@
 <template>
   <div class="login">
-    <form v-on:submit.prevent="submit()">
-      <h1>Login</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Email:</label>
-        <input type="email" v-model="newSessionParams.email" />
+    <section id="services" class="section-bg">
+      <div class="container" data-aos="fade-up">
+        <header class="section-header">
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+        </header>
+
+        <div class="row justify-content-center">
+          <div class="col-md-5 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="box">
+              <div class="icon"><i class="bi bi-briefcase" style="color: #ff689b"></i></div>
+              <h4 class="title"><a href="">LOGIN</a></h4>
+              <form v-on:submit.prevent="submit()" class="description">
+                <ul>
+                  <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+                </ul>
+                <div>
+                  <label>Email:</label>
+                  <input type="email" v-model="newSessionParams.email" />
+                </div>
+                <div>
+                  <label>Password:</label>
+                  <input type="password" v-model="newSessionParams.password" />
+                </div>
+                <input type="submit" value="Submit" />
+              </form>
+              <div><router-link to="/">Home</router-link></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" v-model="newSessionParams.password" />
-      </div>
-      <input type="submit" value="Submit" />
-    </form>
+    </section>
   </div>
 </template>
 

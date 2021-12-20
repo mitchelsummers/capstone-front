@@ -1,38 +1,53 @@
 <template>
   <div class="cards-edit">
-    <form v-on:submit.prevent="updateCard()">
-      <h1>Edit Card</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Name:</label>
-        <input type="text" v-model="currentCardParams.name" />
+    <section id="services" class="section-bg">
+      <div class="container" data-aos="fade-up">
+        <header class="section-header">
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+        </header>
+        <div class="row justify-content-center">
+          <div class="col-md-5 col-lg-8" data-aos="zoom-in" data-aos-delay="100">
+            <div class="box">
+              <h4 class="title"><a href="">EDIT CARD</a></h4>
+              <form v-on:submit.prevent="updateCard()">
+                <ul>
+                  <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+                </ul>
+                <div>
+                  <label>Name:</label>
+                  <input type="text" v-model="currentCardParams.name" />
+                </div>
+                <div>
+                  <label>Month:</label>
+                  <input type="text" v-model="currentCardParams.month" />
+                </div>
+                <div>
+                  <label>Day:</label>
+                  <input type="text" v-model="currentCardParams.day" />
+                </div>
+                <div>
+                  <label>Time:</label>
+                  <input type="text" v-model="currentCardParams.time" />
+                </div>
+                <div>
+                  <label>Privacy:</label>
+                  <input type="text" v-model="currentCardParams.privacy" />
+                </div>
+                <div>
+                  <label>Course:</label>
+                  <input type="text" v-model="currentCardParams.course_id" />
+                </div>
+                <input type="submit" value="Update" />
+              </form>
+              <button v-on:click="destroyCard()">Delete</button>
+              <div><router-link to="/user">BACK</router-link></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <label>Month:</label>
-        <input type="text" v-model="currentCardParams.month" />
-      </div>
-      <div>
-        <label>Day:</label>
-        <input type="text" v-model="currentCardParams.day" />
-      </div>
-      <div>
-        <label>Time:</label>
-        <input type="text" v-model="currentCardParams.time" />
-      </div>
-      <div>
-        <label>Privacy:</label>
-        <input type="text" v-model="currentCardParams.privacy" />
-      </div>
-      <div>
-        <label>Course:</label>
-        <input type="text" v-model="currentCardParams.course_id" />
-      </div>
-      <input type="submit" value="Update" />
-    </form>
-    <button v-on:click="destroyCard()">Delete</button>
-    <div><router-link to="/user">Back to User Home</router-link></div>
+    </section>
     <!-- <p>{{ card.players }}</p> -->
   </div>
 </template>

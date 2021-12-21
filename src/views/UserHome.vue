@@ -38,9 +38,11 @@
             </header>
             <div v-for="playercard in playercards" v-bind:key="playercard.id" class="box">
               <h4 class="title">
-                <router-link v-bind:to="`/cards/${playercard.id}`">{{ playercard.name }}</router-link>
+                <router-link v-bind:to="`/cards/${playercard.id}`">{{ playercard.card.name }}</router-link>
               </h4>
-              <p class="description">{{ playercard.month }} {{ playercard.day }}, {{ playercard.time }}</p>
+              <p class="description">
+                {{ playercard.card.month }} {{ playercard.card.day }}, {{ playercard.card.time }}
+              </p>
             </div>
           </div>
         </div>
@@ -64,6 +66,7 @@ export default {
       user: {},
       usercards: {},
       playercards: {},
+      card: {},
     };
   },
   created: function () {

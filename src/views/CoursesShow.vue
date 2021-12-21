@@ -11,9 +11,11 @@
           <div class="col-lg-6 content order-lg-1 order-2">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div>&nbsp;</div>
-              <div class="icon"><i class="bi bi-geo-alt"></i></div>
+              <a href="">
+                <div class="icon"><i class="bi bi-geo-alt"></i></div>
 
-              <h4 class="title">{{ course.address }}</h4>
+                <h4 class="title">{{ course.address }}</h4>
+              </a>
               <p class="description"></p>
             </div>
 

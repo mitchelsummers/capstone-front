@@ -57,6 +57,7 @@ export default {
       user: [],
       users: [],
       cardplayer: [],
+      player: [],
     };
   },
   created: function () {

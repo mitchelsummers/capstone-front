@@ -30,6 +30,7 @@
 
               <router-link v-bind:to="`/cards/${card.id}/edit`"><p class="description">Edit card</p></router-link>
               <button v-on:click="addPlayer()"><p class="description">Join</p></button>
+              <button v-on:click="removePlayer()"><p class="description">Leave</p></button>
             </div>
           </div>
         </div>
@@ -81,6 +82,21 @@ export default {
         .post("/players", params)
         .then(() => {
           this.$parent.flashMessage = "Joined Card!";
+          this.$router.push("/user");
+        })
+        .catch((error) => {
+          this.status = error.response.status;
+          console.log(error.response);
+        });
+    },
+    removePlayer: function () {
+      var params = {
+        card_id: this.card.id,
+      };
+      axios
+        .delete("/players", params)
+        .then(() => {
+          this.$parent.flashMessage = "Left Card!";
           this.$router.push("/user");
         })
         .catch((error) => {

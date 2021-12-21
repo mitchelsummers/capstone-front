@@ -40,7 +40,7 @@
               <h4 class="title">
                 <router-link v-bind:to="`/cards/${playercard.id}`">{{ playercard.name }}</router-link>
               </h4>
-              <p class="description">{{ playercard.month }} {{ playercard.day }} {{ playercard.time }}</p>
+              <p class="description">{{ playercard.month }} {{ playercard.day }}, {{ playercard.time }}</p>
             </div>
           </div>
         </div>
@@ -64,7 +64,6 @@ export default {
       user: {},
       usercards: {},
       playercards: {},
-      cardplayers: {},
     };
   },
   created: function () {
@@ -78,6 +77,10 @@ export default {
       this.playercards = response.data;
       console.log("Player Cards:", this.playercards);
     });
+    // axios.get("/playercards-false").then((response) => {
+    //   this.playercards = response.data;
+    //   console.log("Player Cards:", this.playercards);
+    // });
     // axios.get("/cardplayers").then((response) => {
     //   this.cardplayers = response.data;
     // });

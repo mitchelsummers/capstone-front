@@ -82,6 +82,19 @@
         </div>
       </div>
     </section>
+    <section id="about">
+      <div class="container" data-aos="fade-up">
+        <header class="section-header">
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+        </header>
+        <div class="row about-container">
+          <div class="col-lg-6 content order-lg-1 order-2">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- <div v-for="coursecard in coursecards" v-bind:key="coursecard.id">
       <router-link v-bind:to="`/cards/${coursecard.id}`">

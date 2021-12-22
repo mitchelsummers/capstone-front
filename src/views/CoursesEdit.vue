@@ -1,37 +1,54 @@
 <template>
   <div class="courses-edit">
-    <form v-on:submit.prevent="updateCourse()">
-      <h1>Edit Course</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Name:</label>
-        <input type="text" v-model="currentCourseParams.name" />
+    <section id="services" class="section-bg">
+      <div class="container" data-aos="fade-up">
+        <header class="section-header">
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+        </header>
+        <div class="row justify-content-center">
+          <div class="col-md-5 col-lg-8" data-aos="zoom-in" data-aos-delay="100">
+            <div class="box">
+              <h4 class="title"><a href="">EDIT CARD</a></h4>
+              <form v-on:submit.prevent="updateCourse()">
+                <h1>Edit Course</h1>
+                <ul>
+                  <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+                </ul>
+                <div>
+                  <label>Name:</label>
+                  <input type="text" v-model="currentCourseParams.name" />
+                </div>
+                <div>
+                  <label>Address:</label>
+                  <input type="text" v-model="currentCourseParams.address" />
+                </div>
+                <div>
+                  <label>Hole Count:</label>
+                  <input type="text" v-model="currentCourseParams.hole_count" />
+                </div>
+                <div>
+                  <label>Course Par:</label>
+                  <input type="text" v-model="currentCourseParams.course_par" />
+                </div>
+                <div>
+                  <label>Rating:</label>
+                  <input type="text" v-model="currentCourseParams.rating" />
+                </div>
+                <div>
+                  <label>Image:</label>
+                  <input type="text" v-model="currentCourseParams.image" />
+                </div>
+                <input type="submit" value="Update" />
+              </form>
+              <button v-on:click="destroyCourse()">Delete</button>
+              <div><router-link to="/courses">BACK</router-link></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <label>Address:</label>
-        <input type="text" v-model="currentCourseParams.address" />
-      </div>
-      <div>
-        <label>Hole Count:</label>
-        <input type="text" v-model="currentCourseParams.hole_count" />
-      </div>
-      <div>
-        <label>Course Par:</label>
-        <input type="text" v-model="currentCourseParams.course_par" />
-      </div>
-      <div>
-        <label>Rating:</label>
-        <input type="text" v-model="currentCourseParams.rating" />
-      </div>
-      <div>
-        <label>Image:</label>
-        <input type="text" v-model="currentCourseParams.image" />
-      </div>
-      <input type="submit" value="Update" />
-    </form>
-    <button v-on:click="destroyCourse()">Delete</button>
+    </section>
   </div>
 </template>
 

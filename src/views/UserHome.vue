@@ -17,10 +17,10 @@
 
     <section id="services" class="section-bg">
       <div class="container" data-aos="fade-up">
-        <header class="section-header">
-          <h3>Your Cards</h3>
-        </header>
         <div class="row justify-content-center">
+          <header class="section-header">
+            <h3>Your Cards</h3>
+          </header>
           <div class="col-md-5 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
             <div v-for="usercard in usercards" v-bind:key="usercard.id" class="box">
               <h4 class="title">
@@ -33,6 +33,12 @@
               </div> -->
               <!-- <div v-for="cardplayer in cardplayers" :key="cardplayer.id"></div> -->
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-md-5 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
             <header class="section-header">
               <h3>Cards You're In</h3>
             </header>
@@ -42,6 +48,9 @@
               </h4>
               <p class="description">
                 {{ playercard.card.month }} {{ playercard.card.day }}, {{ playercard.card.time }}
+              </p>
+              <p class="description">
+                {{ playercard.card.course }}
               </p>
             </div>
           </div>
